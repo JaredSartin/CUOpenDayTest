@@ -52,6 +52,8 @@ Normally I would include wireframes for mobile and desktop, as well as navigatio
 
 # Interview Excercise Notes and Feedback
 
+The website is visible here: https://jared.sart.in/CUOpenDayTest/
+
 ## Overview
 
 This is one of the most open-ended programming challenges I have ever been a part of - challenging requirements outlining, design creation and brand matching, as well as technical implementation. The expectation that candidates are putting in 1-2 hours of work would really only test one of these areas (and barely that). Happy to discuss my approach and disposition on the matter.
