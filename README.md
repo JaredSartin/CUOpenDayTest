@@ -65,8 +65,9 @@ In order to build the full experience, with all the necessary tooling and tech, 
 In a perfect world, a front-end like this would also come with a test suite to ensure it parses and displays all expected permutations of data from the API and handles error-cases gracefully.
 
 ## Time Tracking
-- Codebase review and tech setup: 45 minutes
+- Codebase review and tech setup: 60 minutes
   - *Stage notes: Overall I intend to spend 4 hours or less, but I will be unable to fully complete all steps; defining, designing, and implementing a full experience that usability, accessibily, branding, and interactive functionality is no simple feat.*
+  - *Additional notes: Went back and updated some of the core packages - had high sev issues. Also locked versions fully instead of using the ^ and ~ specifications. Finer control of security and build stability*
 - Requirements documentation: 45 minutes
   - *Stage notes: I would have loved to spend time on UX design and UI design, but given that I am nearly 1.5 hours in, I need to design on the fly.*
 - Initial site build: (Expected 2-3 hours)
