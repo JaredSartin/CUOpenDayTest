@@ -5,22 +5,18 @@ class LandingScreen extends HTMLElement {
   unbindLinks: any;
 
   beforeRouteEnter() {
-    this.model = window.CardiffEvent;
+    this.model = window.CUEvents.OpenDay;
   }
 
   connectedCallback() {
     this.innerHTML = `
-      <section class="cu-head w-full md:h-64 h-48 flex justify-center text-white  flex-col bg-cover bg-center bg-black/40 bg-blend-multiply px-4">
-        <h1 class="text-2xl md:text-5xl font-bold mb-4 font-serif">${this.model.description.trim()}</h1>
-        <h3 class="text-xl md:text-2xl mb-2">${this.openDates()}</h3>
-      </section>
+      <c-page-header titletext="${this.model.description}" secondarytext="${this.openDates()}" background="${this.model.cover_image}"></c-page-header>
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h2 class="text-2xl font-semibold mb-4">Topics</h2>
         <div id="topics-list">${this.renderTopics(this.model.topics)}</div>
       </section>
     `
 
-    this.querySelector('section.cu-head')!.style.backgroundImage = `url('${this.model.cover_image || ''}')`
     this.unbindLinks = bindRouterLinks(this.querySelector('#topics-list'))
   }
 

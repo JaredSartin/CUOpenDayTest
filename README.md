@@ -38,9 +38,14 @@ Secondarily, parents and grandparents will want to gather information about the 
 - **Topic landing page:** Details the individual topic and associated programs.
   - Overview - Title / Description of topic / cover image
   - Program list - Sorted list of programs for the given topic, showing title, location and time - interaction should drill down to the program landing page
-- **Program landing page:** Details of the program, timing, and location.
+- **[DEPRECATED] Program landing page:** Details of the program, timing, and location.
   - Overview - Title / Description of program / Time / Type
   - Location - Both the floor/room where applicable, but also the building name and address - accompanied by a map widget
+- **Location landing page:** List locations on campus to allow exploration
+  - List of locations (provided by a secondary "API")
+- **Location details page:** Details of a given location
+  - Overview - Title / description
+  - Details - Address / Postal / Ideally a map link or visual
 - **Other Events:** Landing page linking to other events that are provided by the API (seeing that there can be multiple Open Days)
   - Simple listings of event name and date
 
@@ -64,12 +69,20 @@ In order to build the full experience, with all the necessary tooling and tech, 
 
 In a perfect world, a front-end like this would also come with a test suite to ensure it parses and displays all expected permutations of data from the API and handles error-cases gracefully.
 
+### Wrap up notes
+- I didn't quite get to the sharing side of things (print styles and buttons to share via IM/WhatsApp) - these can come later, nice to haves.
+- Cleanup like moving some things to utils and breaking out more components would be nice - normally next steps at this point.
+
 ## Time Tracking
 - Codebase review and tech setup: 60 minutes
   - *Stage notes: Overall I intend to spend 4 hours or less, but I will be unable to fully complete all steps; defining, designing, and implementing a full experience that usability, accessibily, branding, and interactive functionality is no simple feat.*
   - *Additional notes: Went back and updated some of the core packages - had high sev issues. Also locked versions fully instead of using the ^ and ~ specifications. Finer control of security and build stability*
 - Requirements documentation: 45 minutes
   - *Stage notes: I would have loved to spend time on UX design and UI design, but given that I am nearly 1.5 hours in, I need to design on the fly.*
-- Initial site build: 1.5 hours (so far)
+- Initial site build: 2.5 hours (so far)
   - *Notes part 1: Created routable setup with some basics to look similar to the Cardiff University website, lots to do to match brand, but won't focus a lot there. Still need to work on the Topic landing and individual Program pages. I will want to work on a getting-around and other events pages (the latter being a mega-stretch)*
-- Polish / Perf / Bugs: (Expected 1 hour)
+  - *Notes part 2: Around 2.5 hours into dev, I think I have just the location details pages, the footer bar, and some navigation helpers (top nav and back button) to make, should be less than an hour. I did change the drill-downs of the programs to be expandable, since many programs are in the same building for most topics - changed the spec above to match.*
+  - *Notes part 3: About 3.5 hours into dev, need to add top-nav and a locations landing page. Also a simple footer - that should take about 30 minutes or so and then I have a base site complete.*
+- Polish / Perf / Bugs: (Expected less than an hour)
+
+**Total time:** x Hours (includes setup, requirements documentation, node module updates and dev/polish time)
