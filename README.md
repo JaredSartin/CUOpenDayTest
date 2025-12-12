@@ -70,5 +70,6 @@ In a perfect world, a front-end like this would also come with a test suite to e
   - *Additional notes: Went back and updated some of the core packages - had high sev issues. Also locked versions fully instead of using the ^ and ~ specifications. Finer control of security and build stability*
 - Requirements documentation: 45 minutes
   - *Stage notes: I would have loved to spend time on UX design and UI design, but given that I am nearly 1.5 hours in, I need to design on the fly.*
-- Initial site build: (Expected 2-3 hours)
+- Initial site build: 1.5 hours (so far)
+  - *Notes part 1: Created routable setup with some basics to look similar to the Cardiff University website, lots to do to match brand, but won't focus a lot there. Still need to work on the Topic landing and individual Program pages. I will want to work on a getting-around and other events pages (the latter being a mega-stretch)*
 - Polish / Perf / Bugs: (Expected 1 hour)
