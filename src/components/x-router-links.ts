@@ -4,6 +4,10 @@
 import { bindRouterLinks } from "slick-router/middlewares/router-links.js";
 
 class RouterLinks extends HTMLElement {
+  // CHANGE: TS Defs
+  unbindRouterLinks: any;
+  params: Record<string, string> = {};
+  query: Record<string, string> = {};
   connectedCallback() {
     // Register the web component using bindRouterLinks
     this.unbindRouterLinks = bindRouterLinks(this, {
