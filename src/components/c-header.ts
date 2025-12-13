@@ -1,4 +1,3 @@
-import 'slick-router/components/router-links.js';
 import cuLogo from '/cu-logo.svg'
 
 class HeaderComponent extends HTMLElement {
