@@ -1,5 +1,9 @@
 import './style.css'
 
+// Prevent tree-shaking of router links component
+import * as RouterLinks from 'slick-router/components/router-links.js';
+void RouterLinks;
+
 import.meta.glob('./components/*.ts', { eager: true })
 
 import { Router } from 'slick-router/core.js'
