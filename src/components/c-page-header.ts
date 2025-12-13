@@ -8,9 +8,9 @@ class PageHeaderComponent extends HTMLElement {
           ${secondarytext !== 'undefined' ? `<h3 class="text-xl md:text-2xl mb-2 w-full">${secondarytext}</h3>` : ''}
         </div>
       </section>
-    `
+    `;
 
-    this.querySelector('section.cu-head')!.style.backgroundImage = `url('${background || ''}')`
+    (this.querySelector('section.cu-head') as HTMLElement)!.style.backgroundImage = `url('${background || ''}')`
   }
 }
 

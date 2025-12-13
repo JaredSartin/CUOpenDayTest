@@ -17,27 +17,36 @@ function renderTemplate() {
   `
 }
 
+// Adding ts-ignore to suppress errors from slick-router's type definitions
+// The below usage is valid, but the types are not accurate.
 function startApp() {
   renderTemplate();
 
   const router = new Router({
-    hashChange: true,
+    // @ts-ignore
     pushState: false,
+    // @ts-ignore
     outlet: 'router-outlet'
   })
-  window.router = router
 
   router.map(function (route) {
     route('landing', {path: '/'}, function() {
+      // @ts-ignore
       route('home', {path: '', component: 's-landing'})
+      // @ts-ignore
       route('topic', {path: 'topic/:topicId', component: 's-topic'})
+      // @ts-ignore
       route('location', {path: 'location/:locationId', component: 's-location'})
+      // @ts-ignore
       route('error', {path: ':path*', component: 's-error'})
     })
   })
 
+  // @ts-ignore
   router.use(wc)
+  // @ts-ignore
   router.use(events)
+  // @ts-ignore
   router.use(routerLinks)
   router.listen()
 }

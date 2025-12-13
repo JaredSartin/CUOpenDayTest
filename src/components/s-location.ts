@@ -1,4 +1,9 @@
 class LocationScreen extends HTMLElement {
+  universityModel: any;
+  refreshmentsModel: any;
+  accomodationModel: any;
+  transportationModel: any;
+
   beforeRouteEnter(transition: any) {
     this.universityModel = window.CUEvents.Locations.university.find((location: any) => location.id == transition.params.locationId);
     this.refreshmentsModel = window.CUEvents.Locations.refreshments.find((location: any) => location.id == transition.params.locationId);

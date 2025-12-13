@@ -1,4 +1,5 @@
 import { bindRouterLinks } from 'slick-router/middlewares/router-links.js';
+import cuLogo from '/cu-logo.svg';
 
 class LandingScreen extends HTMLElement {
   model: any;
@@ -17,7 +18,12 @@ class LandingScreen extends HTMLElement {
       </section>
     `
 
-    this.unbindLinks = bindRouterLinks(this.querySelector('#topics-list'))
+    const topicsList = this.querySelector('#topics-list');
+    if (topicsList) {
+      this.unbindLinks = bindRouterLinks(topicsList as HTMLElement);
+    } else {
+      this.unbindLinks = () => {};
+    }
   }
 
   disconnectedCallback() {

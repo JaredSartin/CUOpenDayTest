@@ -2,6 +2,7 @@
 class TopicScreen extends HTMLElement {
   model: any;
   eventModel: any;
+  $router: any;
 
   beforeRouteEnter(transition: any) {
     this.eventModel = window.CUEvents.OpenDay;
