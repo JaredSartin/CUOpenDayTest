@@ -1,4 +1,4 @@
-import { bindRouterLinks } from 'slick-router/middlewares/router-links.js';
+import 'slick-router/components/router-links.js';
 import cuLogo from '/cu-logo.svg';
 
 class LandingScreen extends HTMLElement {
@@ -14,20 +14,9 @@ class LandingScreen extends HTMLElement {
       <c-page-header titletext="${this.model.description}" secondarytext="${this.openDates()}" background="${this.model.cover_image}"></c-page-header>
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h2 class="text-2xl font-semibold mb-4">Topics</h2>
-        <div id="topics-list">${this.renderTopics(this.model.topics)}</div>
+        <router-links id="topics-list">${this.renderTopics(this.model.topics)}</div>
       </section>
     `
-
-    const topicsList = this.querySelector('#topics-list');
-    if (topicsList) {
-      this.unbindLinks = bindRouterLinks(topicsList as HTMLElement);
-    } else {
-      this.unbindLinks = () => {};
-    }
-  }
-
-  disconnectedCallback() {
-    this.unbindLinks()
   }
 
   renderTopics(topics: any[]) {

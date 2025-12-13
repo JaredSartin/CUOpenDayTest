@@ -14,6 +14,12 @@ function renderTemplate() {
     <c-header></c-header>
     <router-outlet></router-outlet>
   </div>
+  <footer class="cu-footer w-full bg-cardiff-dark text-white p-4 mt-8">
+    <div class="max-w-4xl mx-auto text-center text-sm">
+      <p>Not an official Cardiff University website. This is only a test.</p>
+      <p>Created by <a class="underline font-semibold" href="https://github.com/jaredsartin/CUOpenDayTest" target="_blank" rel="noopener noreferrer">Jared Sartin.</p>
+    </div>
+  </footer>
   `
 }
 
@@ -22,24 +28,53 @@ function renderTemplate() {
 function startApp() {
   renderTemplate();
 
+  const routes = [
+    {
+      name: 'app',
+      path: '/',
+      children: [
+        {
+          name: 'home',
+          path: '',
+          component: 's-landing'
+        },
+        {
+          name: 'topic',
+          path: 'topic/:topicId',
+          component: 's-topic'
+        },
+        {
+          name: 'location-hub',
+          path: 'locations',
+          children: [
+            {
+              name: 'locations',
+              path: '',
+              component: 's-location-list',
+            },
+            {
+              name: 'location',
+              path: ':locationId',
+              component: 's-location'
+            },
+          ]
+        },
+        {
+          name: 'error',
+          path: ':path*',
+          component: 's-error'
+        }
+      ]
+    }
+  ];
+
   const router = new Router({
+    // @ts-ignore
+    routes,
     // @ts-ignore
     pushState: false,
     // @ts-ignore
     outlet: 'router-outlet'
-  })
-
-  router.map(function (route) {
-    route('landing', {path: '/'}, function() {
-      // @ts-ignore
-      route('home', {path: '', component: 's-landing'})
-      // @ts-ignore
-      route('topic', {path: 'topic/:topicId', component: 's-topic'})
-      // @ts-ignore
-      route('location', {path: 'location/:locationId', component: 's-location'})
-      // @ts-ignore
-      route('error', {path: ':path*', component: 's-error'})
-    })
   })
 
   // @ts-ignore
@@ -49,6 +84,10 @@ function startApp() {
   // @ts-ignore
   router.use(routerLinks)
   router.listen()
+
+  window.addEventListener('router-transition', () => {
+    window.scrollTo(0, 0);
+  });
 }
 
 async function loadData(dataSet: string) {

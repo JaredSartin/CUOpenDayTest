@@ -22,6 +22,7 @@ class LocationScreen extends HTMLElement {
       return;
     }
 
+    const cleanFormat = (str: string) => str ? str.replace(/\r\n/g, '<br>').trim() : '';
 
     this.innerHTML = `
       <c-page-header titletext="${baseModel.title}" secondarytext="${baseModel.campus.title}" background="${baseModel.cover_image}"></c-page-header>
@@ -35,29 +36,27 @@ class LocationScreen extends HTMLElement {
           ${baseModel.website ? `<li><a href="${baseModel.website}" class="text-blue-600 visited:text-purple-600" target="_blank" rel="noopener noreferrer">Official Website</a></li>` : ''}
         </ul>
       </section>
-      ${this.universityModel ? `
+      ${this.universityModel && this.universityModel.description ? `
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h3 class="text-xl font-semibold mb-4">Location Information</h3>
-        ${this.universityModel.description ? `<p class="mb-4">${this.universityModel.description}</p>` : ''}
+        <p class="mb-4">${cleanFormat(this.universityModel.description)}</p>
       </section>` : ''}
-      ${this.refreshmentsModel ? `
+      ${this.refreshmentsModel && this.refreshmentsModel.title ? `
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h3 class="text-xl font-semibold mb-4">Refreshments Available</h3>
-        ${this.refreshmentsModel.description ? `<p class="mb-4">${this.refreshmentsModel.title}</p>` : ''}
+        <p class="mb-4">${cleanFormat(this.refreshmentsModel.title)}</p>
       </section>` : ''}
-      ${this.accomodationModel ? `
+      ${this.accomodationModel && this.accomodationModel.title ? `
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h3 class="text-xl font-semibold mb-4">Accommodation Information</h3>
-        ${this.accomodationModel.description ? `<p class="mb-4">${this.accomodationModel.description}</p>` : ''}
+        <p class="mb-4">${cleanFormat(this.accomodationModel.title)}</p>
       </section>` : ''}
-      ${this.transportationModel ? `
+      ${this.transportationModel && this.transportationModel.title ? `
       <section class="cu-content max-w-3xl mx-auto my-8">
         <h3 class="text-xl font-semibold mb-4">Transportation Information</h3>
-        ${this.transportationModel.description ? `<p class="mb-4">${this.transportationModel.description}</p>` : ''}
+        <p class="mb-4">${cleanFormat(this.transportationModel.title)}</p>
       </section>` : ''}
     `
-
-    window.scrollTo(0, 0);
   }
 
   mapLink(address: string, postcode: string) {

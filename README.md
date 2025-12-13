@@ -72,6 +72,7 @@ In a perfect world, a front-end like this would also come with a test suite to e
 ### Wrap up notes
 - I didn't quite get to the sharing side of things (print styles and buttons to share via IM/WhatsApp) - these can come later, nice to haves.
 - Cleanup like moving some things to utils and breaking out more components would be nice - normally next steps at this point.
+- Content is messy, so next steps would be to remedy (some locations have nothing more than an address, others have addresses that double up on post code or have line breaks) - would seek internal staff to manage data expectations.
 
 ## Time Tracking
 - Codebase review and tech setup: 60 minutes
@@ -79,10 +80,10 @@ In a perfect world, a front-end like this would also come with a test suite to e
   - *Additional notes: Went back and updated some of the core packages - had high sev issues. Also locked versions fully instead of using the ^ and ~ specifications. Finer control of security and build stability*
 - Requirements documentation: 45 minutes
   - *Stage notes: I would have loved to spend time on UX design and UI design, but given that I am nearly 1.5 hours in, I need to design on the fly.*
-- Initial site build: 2.5 hours (so far)
+- Initial site build: 3.75 hours
   - *Notes part 1: Created routable setup with some basics to look similar to the Cardiff University website, lots to do to match brand, but won't focus a lot there. Still need to work on the Topic landing and individual Program pages. I will want to work on a getting-around and other events pages (the latter being a mega-stretch)*
   - *Notes part 2: Around 2.5 hours into dev, I think I have just the location details pages, the footer bar, and some navigation helpers (top nav and back button) to make, should be less than an hour. I did change the drill-downs of the programs to be expandable, since many programs are in the same building for most topics - changed the spec above to match.*
   - *Notes part 3: About 3.5 hours into dev, need to add top-nav and a locations landing page. Also a simple footer - that should take about 30 minutes or so and then I have a base site complete.*
-- Polish / Perf / Bugs: (Expected less than an hour)
+  - *Notes part 4: Dev time was just under 4 hours - including some polish work. There are some utilities I would extract and tooling to build, but this is a quick standup of the event pages*
 
-**Total time:** x Hours (includes setup, requirements documentation, node module updates and dev/polish time)
+**Total time:** 5.5 Hours (includes setup, requirements documentation, node module updates and dev/polish time)
